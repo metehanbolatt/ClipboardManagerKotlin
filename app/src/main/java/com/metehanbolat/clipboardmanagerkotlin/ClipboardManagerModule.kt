@@ -1,0 +1,17 @@
+package com.metehanbolat.clipboardmanagerkotlin
+
+import androidx.lifecycle.LiveData
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class ClipboardManagerModule {
+
+    @Binds
+    @Singleton
+    abstract fun bindClipboardManager(clipboardLD: ClipboardLD): LiveData<String>
+}
